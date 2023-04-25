@@ -19,14 +19,13 @@ workflow soupx {
             cellranger_outputs_dir = cellranger_outputs_dir,
             cpu=cpu,
             memory=memory,
-            extra_disk_space = extra_disk_space,
+            disk_space = disk_space,
             docker=docker,
             preemptible=preemptible
     }
 
     output {
-        File spectra_anndata_file = run_spectra_model.spectra_anndata_file
-        File spectra_model_file = run_spectra_model.spectra_model_file
+        File soupx_anndata_file = run_soupx.soupx_anndata_file
     }
 }
 
@@ -36,7 +35,7 @@ task run_soupx {
         String output_dir
         String cellranger_outputs_dir
         String memory
-        Int extra_disk_space
+        Int disk_space
         Int cpu
         String docker
         Int preemptible
