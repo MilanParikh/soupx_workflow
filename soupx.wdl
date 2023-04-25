@@ -63,7 +63,7 @@ task run_soupx {
 
         CODE
 
-        gsutil -m rsync -r outputs ~{output_dir}
+        gsutil -m cp cellranger_outputs/soupx_corrected_adata.h5ad ~{output_dir}/
     >>>
 
     output {
