@@ -47,7 +47,7 @@ task run_soupx {
         mkdir -p cellranger_outputs
         gsutil -m rsync -r -x '.*bam.*' ~{cellranger_outputs_dir} cellranger_outputs
 
-        Rscript soupx.R cellranger_outputs/ cellranger_outputs/soupx_counts.mtx
+        Rscript /soupx.R cellranger_outputs/ cellranger_outputs/soupx_counts.mtx
 
         python <<CODE
         import os
